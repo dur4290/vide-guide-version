@@ -1,0 +1,223 @@
+<div class="chapter">
+
+  <h1>Ch3. Git 기초</h1>
+  <div class="chapter-meta">
+    <span class="badge">Chapter 3</span>
+    <span class="badge badge-time">⏱ 약 30분</span>
+  </div>
+
+  <p>
+    <strong>Git</strong>은 코드의 변경 내역을 기록하는 도구입니다. 게임의 "세이브 포인트"처럼
+    작업 중간중간 저장해두면 실수해도 되돌릴 수 있어요.
+    이 챕터에서는 Git을 설치하고, 실습에 쓸 폴더를 GitHub에서 내려받겠습니다.
+  </p>
+
+  <!-- Git 설치 -->
+  <h2>1. Git 설치하기</h2>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Git 다운로드</h4>
+        <p><a href="https://git-scm.com" target="_blank" rel="noopener">git-scm.com</a>에 접속해서 Windows용 Git을 다운로드하세요.</p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch3/step1-git-site.png" alt="Git 공식 사이트" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: git-scm.com 메인 화면'">
+        </div>
+
+        <label class="step-complete" data-step-id="ch3-s1">
+          <input type="checkbox"> Git 설치를 완료했어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>내 이름과 이메일 등록</h4>
+        <p>Git은 변경사항을 기록할 때 누가 작업했는지 표시합니다. 내 정보를 등록해봅시다.</p>
+        <p>VSCode 터미널을 열고 아래 명령어를 실행하세요. <code>홍길동</code>과 <code>email@example.com</code>을 본인 정보로 바꾸세요:</p>
+
+        <pre><code class="language-bash">git config --global user.name "홍길동"
+git config --global user.email "email@example.com"</code></pre>
+
+        <div class="hint-box">
+          <button class="hint-toggle">
+            💡 잘 됐는지 확인하는 방법
+            <span class="toggle-arrow">▼</span>
+          </button>
+          <div class="hint-content">
+            <pre><code class="language-bash">git config --global user.name</code></pre>
+            위 명령어를 실행하면 등록한 이름이 출력됩니다.
+          </div>
+        </div>
+
+        <label class="step-complete" data-step-id="ch3-s2">
+          <input type="checkbox"> 이름과 이메일을 등록했어요
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GitHub 계정 -->
+  <h2>2. GitHub 계정 만들기</h2>
+
+  <p>
+    <strong>GitHub</strong>는 Git으로 관리하는 코드를 인터넷에 올려두는 공간입니다.
+    내 작업물을 클라우드에 백업하고 다른 사람과 공유할 수 있어요.
+  </p>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>GitHub 가입</h4>
+        <p><a href="https://github.com" target="_blank" rel="noopener">github.com</a>에 접속해서 <strong>Sign up</strong>을 클릭하고 계정을 만드세요.</p>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div>username은 나중에 포트폴리오 URL로 사용됩니다. <code>github.com/내username</code> 형태가 되니 신중하게 정하세요.</div>
+        </div>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch3/step2-github.png" alt="GitHub 가입" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: GitHub 가입 화면'">
+        </div>
+
+        <label class="step-complete" data-step-id="ch3-s3">
+          <input type="checkbox"> GitHub 계정을 만들었어요
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 스타터 폴더 클론 -->
+  <h2>3. 실습 폴더 내려받기 (git clone)</h2>
+
+  <p>
+    이제 실습에 쓸 폴더를 GitHub에서 내려받겠습니다. <code>git clone</code>은 GitHub에 있는 저장소를 내 컴퓨터로 복사하는 명령어예요.
+    이 폴더에는 Claude Code에게 내 상황을 설명하는 <code>CLAUDE.md</code> 파일이 들어있어요.
+  </p>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>폴더 위치 정하기</h4>
+        <p>실습 폴더를 저장할 위치로 이동합니다. 바탕화면이나 문서 폴더를 추천해요.</p>
+        <p>VSCode 터미널에서 아래 명령어로 바탕화면으로 이동하세요:</p>
+
+        <pre><code class="language-bash">cd ~/Desktop</code></pre>
+
+        <label class="step-complete" data-step-id="ch3-s4">
+          <input type="checkbox"> 폴더 위치로 이동했어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>스타터 폴더 클론</h4>
+        <p>아래 명령어를 실행해서 실습 폴더를 내려받으세요:</p>
+
+        <pre><code class="language-bash">git clone https://github.com/dur4290/vibe-starter.git</code></pre>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div>위 URL은 가이드 배포 후 업데이트됩니다. 막히면 오픈카톡으로 문의해주세요.</div>
+        </div>
+
+        <p>완료되면 <code>vibe-starter</code> 폴더가 생깁니다.</p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch3/step3-clone.png" alt="git clone 실행" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: git clone 실행 결과'">
+        </div>
+
+        <label class="step-complete" data-step-id="ch3-s5">
+          <input type="checkbox"> vibe-starter 폴더가 생겼어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>VSCode에서 폴더 열기</h4>
+        <p>VSCode에서 <strong>파일 &gt; 폴더 열기</strong>를 선택하고 방금 내려받은 <code>vibe-starter</code> 폴더를 열어보세요.</p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch3/step4-open.png" alt="VSCode에서 폴더 열기" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 vibe-starter 폴더 열기'">
+        </div>
+
+        <p>폴더를 열면 왼쪽 파일 탐색기에 <code>CLAUDE.md</code>와 <code>README.md</code>가 보입니다.</p>
+
+        <label class="step-complete" data-step-id="ch3-s6">
+          <input type="checkbox"> VSCode에서 폴더를 열었어요
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Git 기본 명령어 -->
+  <h2>4. Git 기본 명령어 배우기</h2>
+
+  <p>Git을 쓸 때 반복해서 사용하는 명령어 세 가지를 배워봅시다.</p>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>git status — 현재 상태 확인</h4>
+        <p>어떤 파일이 변경됐는지 확인하는 명령어입니다.</p>
+        <pre><code class="language-bash">git status</code></pre>
+
+        <label class="step-complete" data-step-id="ch3-s7">
+          <input type="checkbox"> git status 명령어를 써봤어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>git add — 저장할 파일 선택</h4>
+        <p>변경된 파일을 "저장 대기 상태"로 올리는 명령어입니다. <code>.</code>은 모든 파일을 의미해요.</p>
+        <pre><code class="language-bash">git add .</code></pre>
+
+        <label class="step-complete" data-step-id="ch3-s8">
+          <input type="checkbox"> git add 명령어를 알았어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>git commit — 세이브 포인트 만들기</h4>
+        <p>변경사항을 저장하는 명령어입니다. <code>-m</code> 뒤에 어떤 변경이었는지 메모를 남겨요.</p>
+        <pre><code class="language-bash">git commit -m "CLAUDE.md 수정: 내 이름 추가"</code></pre>
+
+        <label class="step-complete" data-step-id="ch3-s9">
+          <input type="checkbox"> git commit 명령어를 알았어요
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 챕터 완료 -->
+  <div class="chapter-done-banner">
+    <h3>🎉 Ch3 완료!</h3>
+    <p>실습 폴더도 준비됐고 Git도 배웠어요. 이제 진짜 프로젝트를 만들 차례입니다!</p>
+    <a href="#/ch4" class="btn-next">Ch4 시작하기 →</a>
+  </div>
+
+</div>

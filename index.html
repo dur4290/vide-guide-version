@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ 바이브코딩 가이드북</title>
+  <meta name="description" content="데이터과학과 학생을 위한 바이브코딩 입문 가이드. VSCode, Claude Code, Git을 처음부터 차근차근 배워요.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hljs-theme">
+
+  <!-- 앱 스타일 -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- ── 헤더 ────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#/intro" class="logo" style="text-decoration:none; color:inherit;">
+        ⚡ 바이브코딩 가이드북
+      </a>
+      <div class="header-actions">
+        <div class="progress-info">
+          <span class="progress-label">진도</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <span class="progress-pct" id="progress-pct">0%</span>
+        </div>
+        <button id="theme-toggle" aria-label="테마 전환">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 레이아웃 ─────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- 사이드바 -->
+    <nav class="sidebar" id="sidebar">
+      <ul class="chapter-nav">
+        <li>
+          <a href="#/intro" data-chapter="intro" class="nav-item">
+            <span class="nav-dot"></span>
+            <span>시작하기</span>
+          </a>
+        </li>
+        <div class="sidebar-divider"></div>
+        <li>
+          <a href="#/ch1" data-chapter="ch1" class="nav-item">
+            <span class="nav-dot"></span>
+            <span>Ch1. 개발 환경 설정</span>
+          </a>
+        </li>
+        <li>
+          <a href="#/ch2" data-chapter="ch2" class="nav-item">
+            <span class="nav-dot"></span>
+            <span>Ch2. Claude Code 시작</span>
+          </a>
+        </li>
+        <li>
+          <a href="#/ch3" data-chapter="ch3" class="nav-item">
+            <span class="nav-dot"></span>
+            <span>Ch3. Git 기초</span>
+          </a>
+        </li>
+        <li>
+          <a href="#/ch4" data-chapter="ch4" class="nav-item">
+            <span class="nav-dot"></span>
+            <span>Ch4. 실습 프로젝트</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="KAKAO_OPEN_CHAT_URL" class="contact-btn" target="_blank" rel="noopener">
+          💬 막히면 물어보기
+        </a>
+      </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="content" id="content">
+      <div class="content-inner" id="content-inner">
+        <div class="loading">불러오는 중...</div>
+      </div>
+    </main>
+
+  </div><!-- /layout -->
+
+  <!-- Floating 문의 버튼 -->
+  <a href="KAKAO_OPEN_CHAT_URL" class="floating-contact" target="_blank" rel="noopener" title="오픈카톡 문의">
+    💬
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="assets/js/hint.js"></script>
+  <script src="assets/js/progress.js"></script>
+  <script src="assets/js/router.js"></script>
+
+  <!-- 다크모드 시 highlight.js 테마 교체 -->
+  <script>
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.dataset.theme === 'dark';
+      document.getElementById('hljs-theme').href = isDark
+        ? 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css'
+        : 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css';
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  </script>
+
+</body>
+</html>
