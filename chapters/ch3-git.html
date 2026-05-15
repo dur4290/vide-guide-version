@@ -95,12 +95,13 @@ git config --global user.email "email@example.com"</code></pre>
 
   </div>
 
-  <!-- 스타터 폴더 클론 -->
-  <h2>3. 실습 폴더 내려받기 (git clone)</h2>
+  <!-- 워크스페이스 열기 -->
+  <h2>3. 실습 폴더 VSCode로 열기</h2>
 
   <p>
-    이제 실습에 쓸 폴더를 GitHub에서 내려받겠습니다. <code>git clone</code>은 GitHub에 있는 저장소를 내 컴퓨터로 복사하는 명령어예요.
-    이 폴더에는 Claude Code에게 내 상황을 설명하는 <code>CLAUDE.md</code> 파일이 들어있어요.
+    인트로에서 받아 압축 푼 폴더를 VSCode로 열겠습니다.
+    이 폴더에는 Claude Code에게 내 상황을 설명하는 <code>CLAUDE.md</code>와
+    자주 쓰는 슬래시 커맨드들이 미리 세팅되어 있어요.
   </p>
 
   <div class="step-list">
@@ -108,14 +109,17 @@ git config --global user.email "email@example.com"</code></pre>
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>폴더 위치 정하기</h4>
-        <p>실습 폴더를 저장할 위치로 이동합니다. 바탕화면이나 문서 폴더를 추천해요.</p>
-        <p>VSCode 터미널에서 아래 명령어로 바탕화면으로 이동하세요:</p>
+        <h4>VSCode에서 폴더 열기</h4>
+        <p>VSCode 메뉴에서 <strong>파일 &gt; 폴더 열기</strong>를 선택하고 압축 푼 워크스페이스 폴더를 열어주세요.</p>
 
-        <pre><code class="language-bash">cd ~/Desktop</code></pre>
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch3/step3-open.png" alt="VSCode에서 폴더 열기" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 워크스페이스 폴더 열기'">
+        </div>
+
+        <p>왼쪽 파일 탐색기에 <code>CLAUDE.md</code>, <code>README.md</code>, <code>projects/</code>, <code>notes/</code> 폴더가 보이면 성공입니다.</p>
 
         <label class="step-complete" data-step-id="ch3-s4">
-          <input type="checkbox"> 폴더 위치로 이동했어요
+          <input type="checkbox"> VSCode에서 폴더를 열었어요
         </label>
       </div>
     </div>
@@ -123,42 +127,18 @@ git config --global user.email "email@example.com"</code></pre>
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h4>스타터 폴더 클론</h4>
-        <p>아래 명령어를 실행해서 실습 폴더를 내려받으세요:</p>
+        <h4>/start 커맨드로 워크스페이스 개인화</h4>
+        <p>Claude Code 입력창에 아래를 입력하면 내 이름과 목표를 <code>CLAUDE.md</code>에 자동으로 저장해줍니다.</p>
 
-        <pre><code class="language-bash">git clone https://github.com/dur4290/vibe-starter.git</code></pre>
+        <pre><code>/start</code></pre>
 
         <div class="callout callout-tip">
           <span class="callout-icon">💡</span>
-          <div>위 URL은 가이드 배포 후 업데이트됩니다. 막히면 오픈카톡으로 문의해주세요.</div>
-        </div>
-
-        <p>완료되면 <code>vibe-starter</code> 폴더가 생깁니다.</p>
-
-        <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step3-clone.png" alt="git clone 실행" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: git clone 실행 결과'">
+          <div>한 번만 하면 됩니다. 이후 Claude가 대화할 때마다 내 정보를 기억해요.</div>
         </div>
 
         <label class="step-complete" data-step-id="ch3-s5">
-          <input type="checkbox"> vibe-starter 폴더가 생겼어요
-        </label>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h4>VSCode에서 폴더 열기</h4>
-        <p>VSCode에서 <strong>파일 &gt; 폴더 열기</strong>를 선택하고 방금 내려받은 <code>vibe-starter</code> 폴더를 열어보세요.</p>
-
-        <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step4-open.png" alt="VSCode에서 폴더 열기" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 vibe-starter 폴더 열기'">
-        </div>
-
-        <p>폴더를 열면 왼쪽 파일 탐색기에 <code>CLAUDE.md</code>와 <code>README.md</code>가 보입니다.</p>
-
-        <label class="step-complete" data-step-id="ch3-s6">
-          <input type="checkbox"> VSCode에서 폴더를 열었어요
+          <input type="checkbox"> /start를 실행했어요
         </label>
       </div>
     </div>
@@ -213,10 +193,48 @@ git config --global user.email "email@example.com"</code></pre>
 
   </div>
 
+  <!-- /save 커맨드 -->
+  <h2>5. /save — GitHub에 올리기</h2>
+
+  <p>
+    git add → commit → push를 매번 직접 입력하는 대신,
+    워크스페이스에는 <code>/save</code> 커맨드가 미리 준비되어 있어요.
+  </p>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>/save 사용법</h4>
+        <p>Claude Code 입력창에 아래를 입력하세요:</p>
+
+        <pre><code>/save</code></pre>
+
+        <p>Claude가 자동으로 아래 순서로 처리합니다:</p>
+        <ol>
+          <li>API 키 같은 민감 정보가 포함됐는지 보안 확인</li>
+          <li>커밋 메시지 확인</li>
+          <li>GitHub에 push</li>
+        </ol>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div><code>/save</code>는 <code>git add .</code> + <code>git commit</code> + <code>git push</code>를 한 번에 해주는 단축 커맨드예요.</div>
+        </div>
+
+        <label class="step-complete" data-step-id="ch3-s10">
+          <input type="checkbox"> /save 사용법을 알겠어요
+        </label>
+      </div>
+    </div>
+
+  </div>
+
   <!-- 챕터 완료 -->
   <div class="chapter-done-banner">
     <h3>🎉 Ch3 완료!</h3>
-    <p>실습 폴더도 준비됐고 Git도 배웠어요. 이제 진짜 프로젝트를 만들 차례입니다!</p>
+    <p>Git도 배웠고 워크스페이스도 준비됐어요. 이제 진짜 프로젝트를 만들 차례입니다!</p>
     <a href="#/ch4" class="btn-next">Ch4 시작하기 →</a>
   </div>
 
