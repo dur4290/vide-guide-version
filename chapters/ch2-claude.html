@@ -1,0 +1,143 @@
+<div class="chapter">
+
+  <h1>Ch2. Claude Code 시작하기</h1>
+  <div class="chapter-meta">
+    <span class="badge">Chapter 2</span>
+    <span class="badge badge-time">⏱ 약 20분</span>
+  </div>
+
+  <p>
+    이 챕터에서는 VSCode 안에서 Claude Code를 바로 쓸 수 있도록
+    <strong>Claude Code 확장</strong>을 설치하고 로그인합니다.
+    설치가 끝나면 VSCode 안에서 AI와 대화하며 파일을 만들고 수정할 수 있어요.
+  </p>
+
+  <div class="callout callout-warn">
+    <span class="callout-icon">⚠️</span>
+    <div>
+      <strong>Claude Pro 구독이 필요합니다</strong><br>
+      <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>에서 Pro 구독(월 약 ₩30,000)이 되어 있어야 합니다.
+      아직 구독하지 않았다면 먼저 구독하고 돌아오세요.
+    </div>
+  </div>
+
+  <!-- STEP 1: Claude Code 확장 설치 -->
+  <h2>1. Claude Code 확장 설치하기</h2>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>VSCode 확장 탭 열기</h4>
+        <p>
+          VSCode 왼쪽의 퍼즐 모양 아이콘(확장 프로그램)을 클릭하거나
+          <code>Ctrl + Shift + X</code>를 누르세요.
+        </p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch2/step1-extension.png" alt="VSCode 확장 탭" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode 확장 탭에서 Claude Code 검색'">
+        </div>
+
+        <label class="step-complete" data-step-id="ch2-s1">
+          <input type="checkbox"> VSCode 확장 탭을 열었어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Claude Code 설치</h4>
+        <p>검색창에 <code>Claude Code</code>를 입력하고, Anthropic에서 제공하는 확장을 설치하세요.</p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch2/step2-install.png" alt="Claude Code 확장 설치" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: Claude Code 확장 설치 화면'">
+        </div>
+
+        <label class="step-complete" data-step-id="ch2-s2">
+          <input type="checkbox"> Claude Code 확장을 설치했어요
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STEP 2: 로그인 및 첫 대화 -->
+  <h2>2. VSCode에서 Claude Code 열기</h2>
+
+  <p>확장 설치가 끝나면 VSCode 안에서 Claude Code 패널을 열고 Claude Pro 계정으로 로그인합니다.</p>
+
+  <div class="step-list">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Claude Code 패널 열기</h4>
+        <p>
+          VSCode 왼쪽 사이드바의 Claude Code 아이콘을 클릭하세요.
+          아이콘이 안 보이면 <code>Ctrl + Shift + P</code>를 누르고 <code>Claude Code</code>를 검색해 열 수 있습니다.
+        </p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch2/step3-vscode.png" alt="VSCode Claude Code 패널" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 Claude Code 패널 열기'">
+        </div>
+
+        <div class="hint-box">
+          <button class="hint-toggle">
+            💡 Claude Code 아이콘이 안 보여요
+            <span class="toggle-arrow">▼</span>
+          </button>
+          <div class="hint-content">
+            <p>VSCode를 완전히 닫았다가 다시 열어보세요.</p>
+            <p>그래도 없으면 명령 팔레트(<code>Ctrl + Shift + P</code>)에서 <strong>Developer: Reload Window</strong>를 실행한 뒤 다시 확인하세요.</p>
+          </div>
+        </div>
+
+        <label class="step-complete" data-step-id="ch2-s3">
+          <input type="checkbox"> VSCode에서 Claude Code 패널을 열었어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>로그인하고 첫 대화 테스트</h4>
+        <p>
+          처음 열면 로그인 화면이 나옵니다. Claude Pro 계정으로 로그인한 뒤,
+          입력창에 아래처럼 입력해보세요:
+        </p>
+
+        <pre><code>안녕하세요! 저는 코딩 초보입니다. 자기소개 해주세요.</code></pre>
+
+        <p>Claude가 응답하면 연결 성공입니다! 🎉</p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch2/step4-hello.png" alt="Claude 첫 대화" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 Claude와 첫 대화'">
+        </div>
+
+        <label class="step-complete" data-step-id="ch2-s4">
+          <input type="checkbox"> 로그인 후 Claude가 응답했어요!
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div>
+      <strong>VSCode에서 폴더를 열면 Claude가 그 폴더를 이해합니다</strong><br>
+      Ch3에서 워크스페이스 폴더를 열고 Claude와 대화하면, Claude가 내 파일들을 보면서 도와줄 수 있어요.
+    </div>
+  </div>
+
+  <!-- 챕터 완료 -->
+  <div class="chapter-done-banner">
+    <h3>🎉 Ch2 완료!</h3>
+    <p>VSCode에서 Claude와 첫 대화를 나눴어요. 이제 Git과 워크스페이스를 준비할 차례입니다.</p>
+    <a href="#/ch3" class="btn-next">Ch3 시작하기 →</a>
+  </div>
+
+</div>
