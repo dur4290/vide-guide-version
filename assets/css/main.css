@@ -582,31 +582,6 @@ pre code {
 .prereq-card.required { border-left: 4px solid var(--danger); }
 .prereq-card.recommended { border-left: 4px solid var(--warning); }
 
-/* ── Floating 문의 버튼 ─────────────────────────────── */
-.floating-contact {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-md);
-  z-index: 200;
-  text-decoration: none;
-  transition: transform .15s;
-}
-
-.floating-contact:hover {
-  transform: scale(1.1);
-  text-decoration: none;
-}
-
 /* ── 인트로 히어로 ───────────────────────────────────── */
 .hero {
   text-align: center;
@@ -681,6 +656,6 @@ pre code {
 }
 
 @media print {
-  .site-header, .sidebar, .floating-contact { display: none; }
+  .site-header, .sidebar { display: none; }
   .content { margin-left: 0; }
 }
