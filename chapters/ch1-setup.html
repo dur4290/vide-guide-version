@@ -143,9 +143,18 @@
 
         <pre><code class="language-bash">python --version</code></pre>
 
-        <p>아래처럼 버전 번호가 나오면 Python 설치 단계는 건너뛰어도 됩니다.</p>
+        <p>아래처럼 <strong>버전 번호까지</strong> 나오면 Python 설치 단계는 건너뛰어도 됩니다.</p>
 
         <pre><code class="language-bash">Python 3.12.0</code></pre>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div>
+            <strong><code>Python</code>이라고만 나오면 아직 정상 연결이 아닙니다.</strong><br>
+            버전 번호가 없으면 Windows의 Python 실행 별칭이 잡혔거나, VSCode가 실제 Anaconda Python을 찾지 못한 상태일 수 있어요.
+            아래 힌트를 확인하세요.
+          </div>
+        </div>
 
         <div class="screenshot-wrap">
           <img src="screenshots/ch1/step4-python-check.png" alt="Python 설치 확인" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: 터미널에서 python --version 실행 결과'">
@@ -160,6 +169,24 @@
             Windows 시작 메뉴에서 <strong>Anaconda Prompt</strong>를 열고 <code>python --version</code>을 입력해보세요.
             여기서 버전이 나오면 Python은 설치되어 있는 상태입니다.
             VSCode에서만 연결이 안 된 것이므로 다음 단계의 인터프리터 연결을 확인하면 됩니다.
+          </div>
+        </div>
+
+        <div class="hint-box">
+          <button class="hint-toggle">
+            💡 python --version을 했는데 Python이라고만 나와요
+            <span class="toggle-arrow">▼</span>
+          </button>
+          <div class="hint-content">
+            <p>이 경우는 성공이 아닙니다. 아래 순서대로 확인하세요.</p>
+            <ol>
+              <li>Windows 시작 메뉴에서 <strong>Anaconda Prompt</strong>를 여세요</li>
+              <li><code>python --version</code>을 입력하세요</li>
+              <li>버전 번호가 나오면 Anaconda는 설치되어 있고, VSCode 연결만 다시 잡으면 됩니다</li>
+              <li>VSCode에서 <code>Ctrl + Shift + P</code> → <code>Python: Select Interpreter</code>를 선택하세요</li>
+              <li>Anaconda Python 경로를 선택한 뒤 VSCode 터미널을 새로 열어 다시 확인하세요</li>
+            </ol>
+            <p>그래도 안 되면 Windows 설정에서 <strong>앱 실행 별칭</strong>을 검색하고, <strong>python.exe</strong>와 <strong>python3.exe</strong> 별칭을 끈 뒤 다시 확인하세요.</p>
           </div>
         </div>
 
@@ -214,9 +241,17 @@
 
         <pre><code class="language-bash">python --version</code></pre>
 
-        <p>아래처럼 버전 번호가 나오면 성공입니다:</p>
+        <p>아래처럼 <strong>버전 번호까지</strong> 나오면 성공입니다:</p>
 
         <pre><code class="language-bash">Python 3.12.0</code></pre>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div>
+            <code>Python</code>이라고만 나오고 버전 번호가 없으면 아직 성공이 아닙니다.
+            위의 <strong>python --version을 했는데 Python이라고만 나와요</strong> 힌트를 따라 연결을 다시 확인하세요.
+          </div>
+        </div>
 
         <div class="hint-box">
           <button class="hint-toggle">
@@ -250,7 +285,7 @@
         </div>
 
         <label class="step-complete" data-step-id="ch1-s6">
-          <input type="checkbox"> python --version 명령어가 정상 출력돼요
+          <input type="checkbox"> python --version 명령어가 버전 번호까지 정상 출력돼요
         </label>
       </div>
     </div>
