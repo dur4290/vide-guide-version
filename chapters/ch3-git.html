@@ -9,7 +9,7 @@
   <p>
     <strong>Git</strong>은 코드의 변경 내역을 기록하는 도구입니다. 게임의 "세이브 포인트"처럼
     작업 중간중간 저장해두면 실수해도 되돌릴 수 있어요.
-    이 챕터에서는 Git을 설치하고, 실습에 쓸 폴더를 GitHub에서 내려받겠습니다.
+    이 챕터에서는 Git의 기본 개념을 배우고, 실습에 쓸 워크스페이스를 ZIP으로 내려받겠습니다.
   </p>
 
   <!-- Git 설치 -->
@@ -99,7 +99,7 @@ git config --global user.email "email@example.com"</code></pre>
   <h2>3. 내 실습 폴더 만들고 VSCode로 열기</h2>
 
   <p>
-    학생 배포용 워크스페이스를 내 GitHub 계정으로 복사한 뒤 VSCode로 열겠습니다.
+    학생 배포용 워크스페이스를 ZIP 파일로 내려받은 뒤 VSCode로 열겠습니다.
     이 폴더에는 Claude Code에게 내 상황을 설명하는 <code>CLAUDE.md</code>와
     자주 쓰는 슬래시 커맨드들이 미리 세팅되어 있어요.
   </p>
@@ -130,22 +130,22 @@ git config --global user.email "email@example.com"</code></pre>
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h4>내 GitHub 저장소로 복사</h4>
+        <h4>Download ZIP으로 내려받기</h4>
         <p>
-          GitHub 화면에서 <strong>Use this template</strong> 또는 <strong>Fork</strong>를 눌러
-          내 계정에 새 저장소를 만드세요.
+          GitHub 화면에서 초록색 <strong>Code</strong> 버튼을 누른 뒤
+          <strong>Download ZIP</strong>을 클릭하세요.
         </p>
 
-        <div class="callout callout-warn">
-          <span class="callout-icon">⚠️</span>
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
           <div>
-            <strong>Download ZIP은 쓰지 마세요.</strong>
-            ZIP으로 받으면 나중에 <code>/save</code>가 내 GitHub 저장소로 올리지 못할 수 있어요.
+            다운로드가 끝나면 ZIP 파일을 압축 해제하세요.
+            압축을 푼 폴더 이름이 길게 보이면 <code>vibe-workspace</code>처럼 짧게 바꿔도 됩니다.
           </div>
         </div>
 
         <label class="step-complete" data-step-id="ch3-s5">
-          <input type="checkbox"> 내 GitHub 계정에 워크스페이스 저장소를 만들었어요
+          <input type="checkbox"> ZIP 파일을 내려받고 압축을 풀었어요
         </label>
       </div>
     </div>
@@ -153,15 +153,15 @@ git config --global user.email "email@example.com"</code></pre>
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
-        <h4>VSCode에서 내 저장소 열기</h4>
+        <h4>VSCode에서 워크스페이스 폴더 열기</h4>
         <p>
-          VSCode에서 <strong>Clone Git Repository</strong>를 선택하고,
-          방금 만든 내 저장소 주소를 붙여넣으세요.
-          폴더 위치는 바탕화면이나 문서 폴더를 추천합니다.
+          VSCode에서 <strong>File &gt; Open Folder</strong>를 선택하고,
+          방금 압축을 푼 워크스페이스 폴더를 여세요.
+          폴더 위치는 바탕화면이나 문서 폴더처럼 찾기 쉬운 곳을 추천합니다.
         </p>
 
         <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step4-clone.png" alt="VSCode에서 저장소 클론" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 Clone Git Repository 선택'">
+          <img src="screenshots/ch3/step4-open-folder.png" alt="VSCode에서 워크스페이스 폴더 열기" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 File > Open Folder로 워크스페이스 폴더 열기'">
         </div>
 
         <p>왼쪽 파일 탐색기에 <code>CLAUDE.md</code>, <code>README.md</code>, <code>projects/</code>, <code>notes/</code> 폴더가 보이면 성공입니다.</p>
@@ -241,12 +241,12 @@ git config --global user.email "email@example.com"</code></pre>
 
   </div>
 
-  <!-- /save 커맨드 -->
-  <h2>5. /save — GitHub에 올리기</h2>
+  <!-- 저장 방식 안내 -->
+  <h2>5. 작업 저장 방식 알아두기</h2>
 
   <p>
-    git add → commit → push를 매번 직접 입력하는 대신,
-    워크스페이스에는 <code>/save</code> 커맨드가 미리 준비되어 있어요.
+    ZIP으로 받은 워크스페이스는 내 컴퓨터 폴더에 바로 저장됩니다.
+    오늘 실습에서는 파일이 워크스페이스 안에 만들어져 있으면 충분합니다.
   </p>
 
   <div class="step-list">
@@ -254,25 +254,22 @@ git config --global user.email "email@example.com"</code></pre>
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>/save 사용법</h4>
-        <p>Claude Code 입력창에 아래를 입력하세요:</p>
-
-        <pre><code>/save</code></pre>
-
-        <p>Claude가 자동으로 아래 순서로 처리합니다:</p>
-        <ol>
-          <li>API 키 같은 민감 정보가 포함됐는지 보안 확인</li>
-          <li>커밋 메시지 확인</li>
-          <li>내 GitHub 저장소에 push</li>
-        </ol>
+        <h4>GitHub 저장은 나중에 해도 됩니다</h4>
+        <p>
+          <code>/save</code>는 GitHub 저장소와 연결된 폴더에서 쓰면 편리한 저장 커맨드입니다.
+          하지만 ZIP으로 받은 폴더에서는 GitHub 연결이 아직 없을 수 있어요.
+        </p>
 
         <div class="callout callout-tip">
           <span class="callout-icon">💡</span>
-          <div><code>/save</code>는 보안 검사 후 <code>git add .</code> + <code>git commit</code> + <code>git push</code>를 도와주는 단축 커맨드예요.</div>
+          <div>
+            처음에는 ZIP으로 쉽게 시작하고, 작업물을 GitHub에 올리고 싶어질 때 저장소 연결을 배우면 됩니다.
+            오늘은 워크스페이스 폴더 안에 파일이 잘 만들어지는 것에 집중하세요.
+          </div>
         </div>
 
         <label class="step-complete" data-step-id="ch3-s10">
-          <input type="checkbox"> /save 사용법을 알겠어요
+          <input type="checkbox"> ZIP 폴더 저장과 GitHub 저장의 차이를 알겠어요
         </label>
       </div>
     </div>

@@ -259,27 +259,34 @@
 
   </div>
 
-  <!-- STEP 5: GitHub에 올리기 -->
-  <h2>5. GitHub에 완성본 올리기</h2>
+  <!-- STEP 5: 완성본 확인 -->
+  <h2>5. 완성본 확인하고 보관하기</h2>
 
   <div class="step-list">
 
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>변경사항 저장하기</h4>
-        <p>Claude에게 이렇게 입력하세요:</p>
+        <h4>워크스페이스 안에 파일이 남아 있는지 확인</h4>
+        <p>
+          VSCode 왼쪽 파일 탐색기에서 오늘 만든 <code>organize.py</code> 같은 파일이 보이면 됩니다.
+          ZIP으로 받은 워크스페이스는 내 컴퓨터 폴더에 그대로 저장됩니다.
+        </p>
 
-        <pre><code>/save</code></pre>
-
-        <p>Claude가 보안 확인 후 자동으로 GitHub에 올려줍니다.</p>
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div>
+            나중에 GitHub에 올리고 싶다면 Claude에게
+            <code>이 워크스페이스를 GitHub에 올리는 방법을 단계별로 알려줘</code>라고 물어보세요.
+          </div>
+        </div>
 
         <div class="screenshot-wrap">
-          <img src="screenshots/ch5/step4-push.png" alt="GitHub에 올리기" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: GitHub에 push 완료 후 저장소 화면'">
+          <img src="screenshots/ch5/step4-final-files.png" alt="완성 파일 확인" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode 파일 탐색기에 완성된 organize.py가 보이는 화면'">
         </div>
 
         <label class="step-complete" data-step-id="ch5-s8">
-          <input type="checkbox"> GitHub에 올렸어요! 🎉
+          <input type="checkbox"> 완성 파일이 워크스페이스 안에 저장됐어요! 🎉
         </label>
       </div>
     </div>
