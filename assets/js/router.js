@@ -8,11 +8,11 @@ const ROUTES = {
   'ch1'   : 'chapters/ch1-setup.html',
   'ch2'   : 'chapters/ch2-claude.html',
   'ch3'   : 'chapters/ch3-git.html',
-  'ch4'   : 'chapters/ch3-markdown.html',
-  'ch5'   : 'chapters/ch4-project.html',
+  'ch4'   : 'chapters/ch4-markdown.html',
+  'ch5'   : 'chapters/ch5-project.html',
 };
 
-const CONTENT_VERSION = '20260518-13';
+const CONTENT_VERSION = '20260518-14';
 
 let currentChapter = null;
 

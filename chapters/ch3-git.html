@@ -23,9 +23,7 @@
         <h4>Git 다운로드</h4>
         <p><a href="https://git-scm.com" target="_blank" rel="noopener">git-scm.com</a>에 접속해서 Windows용 Git을 다운로드하세요.</p>
 
-        <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step1-git-site.png" alt="Git 공식 사이트" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: git-scm.com 메인 화면'">
-        </div>
+        <div class="screenshot-placeholder">📸 화면 예시: git-scm.com 메인 화면</div>
 
         <label class="step-complete" data-step-id="ch3-s1">
           <input type="checkbox"> Git 설치를 완료했어요
@@ -83,9 +81,7 @@ git config --global user.email "email@example.com"</code></pre>
           <div>username은 나중에 포트폴리오 URL로 사용됩니다. <code>github.com/내username</code> 형태가 되니 신중하게 정하세요.</div>
         </div>
 
-        <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step2-github.png" alt="GitHub 가입" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: GitHub 가입 화면'">
-        </div>
+        <div class="screenshot-placeholder">📸 화면 예시: GitHub 가입 화면</div>
 
         <label class="step-complete" data-step-id="ch3-s3">
           <input type="checkbox"> GitHub 계정을 만들었어요
@@ -117,9 +113,7 @@ git config --global user.email "email@example.com"</code></pre>
           </a>
         </p>
 
-        <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step3-repo.png" alt="학생 배포용 GitHub 저장소" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: 학생 배포용 GitHub 저장소 화면'">
-        </div>
+        <div class="screenshot-placeholder">📸 화면 예시: 학생 배포용 GitHub 저장소 화면</div>
 
         <label class="step-complete" data-step-id="ch3-s4">
           <input type="checkbox"> 학생 배포용 저장소를 열었어요
@@ -160,9 +154,7 @@ git config --global user.email "email@example.com"</code></pre>
           폴더 위치는 바탕화면이나 문서 폴더처럼 찾기 쉬운 곳을 추천합니다.
         </p>
 
-        <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step4-open-folder.png" alt="VSCode에서 워크스페이스 폴더 열기" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 File > Open Folder로 워크스페이스 폴더 열기'">
-        </div>
+        <div class="screenshot-placeholder">📸 화면 예시: VSCode에서 File &gt; Open Folder로 워크스페이스 폴더 열기</div>
 
         <p>왼쪽 파일 탐색기에 <code>CLAUDE.md</code>, <code>README.md</code>, <code>projects/</code>, <code>notes/</code> 폴더가 보이면 성공입니다.</p>
 
@@ -335,6 +327,26 @@ https://github.com/내아이디/first-vibe-coding.git
           커밋 메시지를 확인하고 GitHub에 올려줍니다.
         </p>
 
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div>
+            <strong>처음 push할 때 GitHub 로그인이 뜰 수 있어요.</strong><br>
+            브라우저나 VSCode에 GitHub 인증 창이 열리면 본인 계정으로 로그인하고 <strong>Authorize</strong> 또는 <strong>승인</strong>을 눌러주세요.
+            인증이 끝난 뒤 Claude Code로 돌아오면 push가 이어집니다.
+          </div>
+        </div>
+
+        <div class="hint-box">
+          <button class="hint-toggle">
+            💡 /save가 실행되지 않아요
+            <span class="toggle-arrow">▼</span>
+          </button>
+          <div class="hint-content">
+            Claude Code 패널을 새로 열고 다시 입력해보세요. 그래도 안 되면 Claude에게 이렇게 요청하세요:
+            <pre><code>현재 워크스페이스에서 /save와 같은 방식으로 git status, 보안 확인, 커밋, push를 차례대로 진행해줘.</code></pre>
+          </div>
+        </div>
+
         <div class="callout callout-tip">
           <span class="callout-icon">💡</span>
           <div>
@@ -354,7 +366,7 @@ https://github.com/내아이디/first-vibe-coding.git
   <!-- 챕터 완료 -->
   <div class="chapter-done-banner">
     <h3>🎉 Ch3 완료!</h3>
-    <p>Git도 배웠고 워크스페이스도 준비됐어요. 이제 진짜 프로젝트를 만들 차례입니다!</p>
+    <p>Git도 배웠고 워크스페이스도 준비됐어요. 이제 Claude와 문서를 만들며 파일 생성 흐름을 익힐 차례입니다.</p>
     <a href="#/ch4" class="btn-next">Ch4 시작하기 →</a>
   </div>
 
