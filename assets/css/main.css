@@ -266,6 +266,21 @@ pre code {
 }
 .contact-btn:hover { opacity: .9; }
 
+.record-btn {
+  display: block;
+  text-align: center;
+  margin-top: .5rem;
+  padding: .6rem 1rem;
+  background: var(--success);
+  color: #fff !important;
+  border-radius: var(--radius);
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: opacity .15s;
+}
+.record-btn:hover { opacity: .9; }
+
 .site-credit {
   margin-top: .8rem;
   font-size: .75rem;
@@ -568,6 +583,37 @@ pre code {
 }
 
 .btn-next:hover { opacity: .9; text-decoration: none; }
+
+.done-actions {
+  display: flex;
+  justify-content: center;
+  gap: .65rem;
+  flex-wrap: wrap;
+  margin-top: .75rem;
+}
+
+.done-actions .btn-next {
+  margin-top: 0;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: .6rem 1.5rem;
+  background: var(--bg);
+  color: var(--success);
+  border: 1px solid var(--success);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  transition: background .15s, opacity .15s;
+}
+
+.btn-secondary:hover {
+  background: var(--success-bg);
+  opacity: .95;
+  text-decoration: none;
+}
 
 /* ── 준비물 카드 ─────────────────────────────────────── */
 .prereq-card {
