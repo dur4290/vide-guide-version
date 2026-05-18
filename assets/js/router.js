@@ -12,6 +12,8 @@ const ROUTES = {
   'ch5'   : 'chapters/ch4-project.html',
 };
 
+const CONTENT_VERSION = '20260518-2';
+
 let currentChapter = null;
 
 /* 해시에서 챕터 추출: #/ch1 → 'ch1' */
@@ -67,7 +69,8 @@ async function loadChapter(chapter) {
   contentEl.innerHTML = '<div class="loading">불러오는 중...</div>';
 
   try {
-    const res = await fetch(path);
+    const separator = path.includes('?') ? '&' : '?';
+    const res = await fetch(`${path}${separator}v=${CONTENT_VERSION}`);
     if (!res.ok) throw new Error(res.statusText);
     const html = await res.text();
     contentEl.innerHTML = html;
