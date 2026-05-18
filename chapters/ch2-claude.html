@@ -1,14 +1,15 @@
 <div class="chapter">
 
-  <h1>Ch2. Claude 시작하기</h1>
+  <h1>Ch2. Claude Code 시작하기</h1>
   <div class="chapter-meta">
     <span class="badge">Chapter 2</span>
     <span class="badge badge-time">⏱ 약 20분</span>
   </div>
 
   <p>
-    이 챕터에서는 <strong>Claude 데스크탑 앱</strong>을 설치하고 VSCode와 연결합니다.
-    설치가 끝나면 VSCode 안에서 바로 AI와 대화할 수 있어요. 터미널은 쓰지 않아도 됩니다.
+    이 챕터에서는 VSCode 안에서 Claude Code를 바로 쓸 수 있도록
+    <strong>Claude Code 확장</strong>을 설치하고 로그인합니다.
+    설치가 끝나면 VSCode 안에서 AI와 대화하며 파일을 만들고 수정할 수 있어요.
   </p>
 
   <div class="callout callout-warn">
@@ -20,26 +21,26 @@
     </div>
   </div>
 
-  <!-- STEP 1: Claude 데스크탑 설치 -->
-  <h2>1. Claude 데스크탑 앱 설치하기</h2>
+  <!-- STEP 1: Claude Code 확장 설치 -->
+  <h2>1. Claude Code 확장 설치하기</h2>
 
   <div class="step-list">
 
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>Claude 다운로드</h4>
+        <h4>VSCode 확장 탭 열기</h4>
         <p>
-          <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a>에 접속해서
-          <strong>Windows용 다운로드</strong> 버튼을 클릭하세요.
+          VSCode 왼쪽의 퍼즐 모양 아이콘(확장 프로그램)을 클릭하거나
+          <code>Ctrl + Shift + X</code>를 누르세요.
         </p>
 
         <div class="screenshot-wrap">
-          <img src="screenshots/ch2/step1-download.png" alt="Claude 다운로드 페이지" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: claude.ai/download 화면'">
+          <img src="screenshots/ch2/step1-extension.png" alt="VSCode 확장 탭" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode 확장 탭에서 Claude Code 검색'">
         </div>
 
         <label class="step-complete" data-step-id="ch2-s1">
-          <input type="checkbox"> 다운로드 버튼을 클릭했어요
+          <input type="checkbox"> VSCode 확장 탭을 열었어요
         </label>
       </div>
     </div>
@@ -47,51 +48,54 @@
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h4>설치 및 로그인</h4>
-        <p>다운로드된 설치 파일을 실행하고, Claude Pro 계정으로 로그인하세요.</p>
+        <h4>Claude Code 설치</h4>
+        <p>검색창에 <code>Claude Code</code>를 입력하고, Anthropic에서 제공하는 확장을 설치하세요.</p>
 
         <div class="screenshot-wrap">
-          <img src="screenshots/ch2/step2-install.png" alt="Claude 설치 및 로그인" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: Claude 앱 설치 및 로그인 화면'">
+          <img src="screenshots/ch2/step2-install.png" alt="Claude Code 확장 설치" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: Claude Code 확장 설치 화면'">
         </div>
 
         <label class="step-complete" data-step-id="ch2-s2">
-          <input type="checkbox"> Claude 앱 설치와 로그인을 완료했어요
+          <input type="checkbox"> Claude Code 확장을 설치했어요
         </label>
       </div>
     </div>
 
   </div>
 
-  <!-- STEP 2: VSCode 확장 연결 -->
-  <h2>2. VSCode에서 Claude 열기</h2>
+  <!-- STEP 2: 로그인 및 첫 대화 -->
+  <h2>2. VSCode에서 Claude Code 열기</h2>
 
-  <p>Claude 데스크탑 앱을 설치하면 VSCode 확장도 자동으로 설치됩니다.</p>
+  <p>확장 설치가 끝나면 VSCode 안에서 Claude Code 패널을 열고 Claude Pro 계정으로 로그인합니다.</p>
 
   <div class="step-list">
 
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>VSCode에서 Claude 아이콘 확인</h4>
-        <p>VSCode 왼쪽 사이드바에 Claude 아이콘이 생겨있어요. 클릭해서 열어보세요.</p>
+        <h4>Claude Code 패널 열기</h4>
+        <p>
+          VSCode 왼쪽 사이드바의 Claude Code 아이콘을 클릭하세요.
+          아이콘이 안 보이면 <code>Ctrl + Shift + P</code>를 누르고 <code>Claude Code</code>를 검색해 열 수 있습니다.
+        </p>
 
         <div class="screenshot-wrap">
-          <img src="screenshots/ch2/step3-vscode.png" alt="VSCode Claude 아이콘" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode 사이드바의 Claude 아이콘'">
+          <img src="screenshots/ch2/step3-vscode.png" alt="VSCode Claude Code 패널" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 Claude Code 패널 열기'">
         </div>
 
         <div class="hint-box">
           <button class="hint-toggle">
-            💡 Claude 아이콘이 안 보여요
+            💡 Claude Code 아이콘이 안 보여요
             <span class="toggle-arrow">▼</span>
           </button>
           <div class="hint-content">
             <p>VSCode를 완전히 닫았다가 다시 열어보세요.</p>
-            <p>그래도 없으면 VSCode 확장 탭(왼쪽 퍼즐 아이콘)에서 <strong>Claude</strong>를 검색해서 직접 설치하세요.</p>
+            <p>그래도 없으면 명령 팔레트(<code>Ctrl + Shift + P</code>)에서 <strong>Developer: Reload Window</strong>를 실행한 뒤 다시 확인하세요.</p>
           </div>
         </div>
 
         <label class="step-complete" data-step-id="ch2-s3">
-          <input type="checkbox"> VSCode에서 Claude 패널을 열었어요
+          <input type="checkbox"> VSCode에서 Claude Code 패널을 열었어요
         </label>
       </div>
     </div>
@@ -99,8 +103,11 @@
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h4>첫 대화 테스트</h4>
-        <p>Claude 패널 하단 입력창에 아래처럼 입력해보세요:</p>
+        <h4>로그인하고 첫 대화 테스트</h4>
+        <p>
+          처음 열면 로그인 화면이 나옵니다. Claude Pro 계정으로 로그인한 뒤,
+          입력창에 아래처럼 입력해보세요:
+        </p>
 
         <pre><code>안녕하세요! 저는 코딩 초보입니다. 자기소개 해주세요.</code></pre>
 
@@ -111,7 +118,7 @@
         </div>
 
         <label class="step-complete" data-step-id="ch2-s4">
-          <input type="checkbox"> Claude가 응답했어요!
+          <input type="checkbox"> 로그인 후 Claude가 응답했어요!
         </label>
       </div>
     </div>

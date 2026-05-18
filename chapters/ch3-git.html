@@ -95,11 +95,11 @@ git config --global user.email "email@example.com"</code></pre>
 
   </div>
 
-  <!-- 워크스페이스 열기 -->
-  <h2>3. 실습 폴더 VSCode로 열기</h2>
+  <!-- 워크스페이스 준비 -->
+  <h2>3. 내 실습 폴더 만들고 VSCode로 열기</h2>
 
   <p>
-    인트로에서 받아 압축 푼 폴더를 VSCode로 열겠습니다.
+    학생 배포용 워크스페이스를 내 GitHub 계정으로 복사한 뒤 VSCode로 열겠습니다.
     이 폴더에는 Claude Code에게 내 상황을 설명하는 <code>CLAUDE.md</code>와
     자주 쓰는 슬래시 커맨드들이 미리 세팅되어 있어요.
   </p>
@@ -109,23 +109,71 @@ git config --global user.email "email@example.com"</code></pre>
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>VSCode에서 폴더 열기</h4>
-        <p>VSCode 메뉴에서 <strong>파일 &gt; 폴더 열기</strong>를 선택하고 압축 푼 워크스페이스 폴더를 열어주세요.</p>
+        <h4>학생 배포용 저장소 열기</h4>
+        <p>아래 링크를 열어주세요.</p>
+        <p>
+          <a href="https://github.com/dur4290/vibe-coding-guide" target="_blank" rel="noopener">
+            👉 github.com/dur4290/vibe-coding-guide
+          </a>
+        </p>
 
         <div class="screenshot-wrap">
-          <img src="screenshots/ch3/step3-open.png" alt="VSCode에서 폴더 열기" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 워크스페이스 폴더 열기'">
+          <img src="screenshots/ch3/step3-repo.png" alt="학생 배포용 GitHub 저장소" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: 학생 배포용 GitHub 저장소 화면'">
         </div>
 
-        <p>왼쪽 파일 탐색기에 <code>CLAUDE.md</code>, <code>README.md</code>, <code>projects/</code>, <code>notes/</code> 폴더가 보이면 성공입니다.</p>
-
         <label class="step-complete" data-step-id="ch3-s4">
-          <input type="checkbox"> VSCode에서 폴더를 열었어요
+          <input type="checkbox"> 학생 배포용 저장소를 열었어요
         </label>
       </div>
     </div>
 
     <div class="step">
       <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>내 GitHub 저장소로 복사</h4>
+        <p>
+          GitHub 화면에서 <strong>Use this template</strong> 또는 <strong>Fork</strong>를 눌러
+          내 계정에 새 저장소를 만드세요.
+        </p>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div>
+            <strong>Download ZIP은 쓰지 마세요.</strong>
+            ZIP으로 받으면 나중에 <code>/save</code>가 내 GitHub 저장소로 올리지 못할 수 있어요.
+          </div>
+        </div>
+
+        <label class="step-complete" data-step-id="ch3-s5">
+          <input type="checkbox"> 내 GitHub 계정에 워크스페이스 저장소를 만들었어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>VSCode에서 내 저장소 열기</h4>
+        <p>
+          VSCode에서 <strong>Clone Git Repository</strong>를 선택하고,
+          방금 만든 내 저장소 주소를 붙여넣으세요.
+          폴더 위치는 바탕화면이나 문서 폴더를 추천합니다.
+        </p>
+
+        <div class="screenshot-wrap">
+          <img src="screenshots/ch3/step4-clone.png" alt="VSCode에서 저장소 클론" onerror="this.parentElement.className='screenshot-placeholder'; this.parentElement.innerHTML='📸 스크린샷: VSCode에서 Clone Git Repository 선택'">
+        </div>
+
+        <p>왼쪽 파일 탐색기에 <code>CLAUDE.md</code>, <code>README.md</code>, <code>projects/</code>, <code>notes/</code> 폴더가 보이면 성공입니다.</p>
+
+        <label class="step-complete" data-step-id="ch3-s6">
+          <input type="checkbox"> VSCode에서 내 워크스페이스를 열었어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
       <div class="step-body">
         <h4>/start 커맨드로 워크스페이스 개인화</h4>
         <p>Claude Code 입력창에 아래를 입력하면 내 이름과 목표를 <code>CLAUDE.md</code>에 자동으로 저장해줍니다.</p>
@@ -137,7 +185,7 @@ git config --global user.email "email@example.com"</code></pre>
           <div>한 번만 하면 됩니다. 이후 Claude가 대화할 때마다 내 정보를 기억해요.</div>
         </div>
 
-        <label class="step-complete" data-step-id="ch3-s5">
+        <label class="step-complete" data-step-id="ch3-s11">
           <input type="checkbox"> /start를 실행했어요
         </label>
       </div>
@@ -215,12 +263,12 @@ git config --global user.email "email@example.com"</code></pre>
         <ol>
           <li>API 키 같은 민감 정보가 포함됐는지 보안 확인</li>
           <li>커밋 메시지 확인</li>
-          <li>GitHub에 push</li>
+          <li>내 GitHub 저장소에 push</li>
         </ol>
 
         <div class="callout callout-tip">
           <span class="callout-icon">💡</span>
-          <div><code>/save</code>는 <code>git add .</code> + <code>git commit</code> + <code>git push</code>를 한 번에 해주는 단축 커맨드예요.</div>
+          <div><code>/save</code>는 보안 검사 후 <code>git add .</code> + <code>git commit</code> + <code>git push</code>를 도와주는 단축 커맨드예요.</div>
         </div>
 
         <label class="step-complete" data-step-id="ch3-s10">

@@ -6,6 +6,16 @@ const STORAGE_KEY = 'vibe-guide-progress';
 
 const CHAPTERS = ['intro', 'ch1', 'ch2', 'ch3', 'ch4'];
 
+/* 전체 진도 계산용 단계 목록
+   챕터 HTML은 한 번에 하나만 로드되므로 DOM만 보면 현재 챕터 진도만 계산됩니다. */
+const CHAPTER_STEPS = {
+  intro: [],
+  ch1: ['ch1-s1', 'ch1-s2', 'ch1-s3', 'ch1-s4', 'ch1-s5', 'ch1-s6'],
+  ch2: ['ch2-s1', 'ch2-s2', 'ch2-s3', 'ch2-s4'],
+  ch3: ['ch3-s1', 'ch3-s2', 'ch3-s3', 'ch3-s4', 'ch3-s5', 'ch3-s6', 'ch3-s11', 'ch3-s7', 'ch3-s8', 'ch3-s9', 'ch3-s10'],
+  ch4: ['ch4-s1', 'ch4-s2', 'ch4-s3', 'ch4-s4', 'ch4-s5', 'ch4-s6', 'ch4-s7', 'ch4-s8'],
+};
+
 /* 저장된 진도 불러오기 (없으면 초기화) */
 function loadProgress() {
   try {
@@ -46,11 +56,11 @@ function calcTotalPct() {
   const data = loadProgress();
   let total = 0, done = 0;
 
-  document.querySelectorAll('.step-complete').forEach(label => {
-    total++;
-    const id = label.dataset.stepId;
-    const ch = label.dataset.chapter;
-    if (data[ch] && data[ch][id]) done++;
+  Object.entries(CHAPTER_STEPS).forEach(([chapter, stepIds]) => {
+    stepIds.forEach(stepId => {
+      total++;
+      if (data[chapter] && data[chapter][stepId]) done++;
+    });
   });
 
   return total === 0 ? 0 : Math.round((done / total) * 100);
@@ -73,12 +83,13 @@ function updateSidebarDots() {
     const navItem = document.querySelector(`.nav-item[data-chapter="${ch}"]`);
     if (!navItem) return;
 
-    const steps = document.querySelectorAll(`.step-complete[data-chapter="${ch}"]`);
-    if (steps.length === 0) return;
+    const steps = CHAPTER_STEPS[ch] || [];
+    if (steps.length === 0) {
+      navItem.classList.remove('done');
+      return;
+    }
 
-    const allDone = Array.from(steps).every(s => {
-      return data[ch] && data[ch][s.dataset.stepId];
-    });
+    const allDone = steps.every(stepId => data[ch] && data[ch][stepId]);
 
     navItem.classList.toggle('done', allDone);
   });
