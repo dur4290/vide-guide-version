@@ -266,6 +266,14 @@ pre code {
 }
 .contact-btn:hover { opacity: .9; }
 
+.site-credit {
+  margin-top: .8rem;
+  font-size: .75rem;
+  line-height: 1.55;
+  color: var(--text-light);
+  text-align: center;
+}
+
 /* ── 메인 콘텐츠 ────────────────────────────────────── */
 .content {
   margin-left: var(--sidebar-w);
