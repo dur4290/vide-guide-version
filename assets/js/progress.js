@@ -12,7 +12,7 @@ const CHAPTER_STEPS = {
   intro: [],
   ch1: ['ch1-s1', 'ch1-s2', 'ch1-s3', 'ch1-s4', 'ch1-s5', 'ch1-s6'],
   ch2: ['ch2-s1', 'ch2-s2', 'ch2-s3', 'ch2-s4'],
-  ch3: ['ch3-s1', 'ch3-s2', 'ch3-s3', 'ch3-s4', 'ch3-s5', 'ch3-s6', 'ch3-s11', 'ch3-s7', 'ch3-s8', 'ch3-s9', 'ch3-s10'],
+  ch3: ['ch3-s1', 'ch3-s2', 'ch3-s3', 'ch3-s4', 'ch3-s5', 'ch3-s6', 'ch3-s11', 'ch3-s7', 'ch3-s8', 'ch3-s9', 'ch3-s10', 'ch3-s12', 'ch3-s13'],
   ch4: ['ch4-s1', 'ch4-s2', 'ch4-s3', 'ch4-s4', 'ch4-s5', 'ch4-s6'],
   ch5: ['ch5-s1', 'ch5-s2', 'ch5-s3', 'ch5-s4', 'ch5-s5', 'ch5-s6', 'ch5-s7', 'ch5-s8'],
 };

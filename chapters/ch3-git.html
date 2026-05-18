@@ -241,35 +241,110 @@ git config --global user.email "email@example.com"</code></pre>
 
   </div>
 
-  <!-- 저장 방식 안내 -->
-  <h2>5. 작업 저장 방식 알아두기</h2>
+  <!-- /save 커맨드 -->
+  <h2>5. /save로 GitHub에 첫 저장하기</h2>
 
   <p>
-    ZIP으로 받은 워크스페이스는 내 컴퓨터 폴더에 바로 저장됩니다.
-    오늘 실습에서는 파일이 워크스페이스 안에 만들어져 있으면 충분합니다.
+    이제 ZIP으로 받은 워크스페이스를 내 GitHub 저장소에 연결해봅니다.
+    이렇게 해두면 앞으로 <code>/save</code>만 입력해도 작업 내용을 GitHub에 저장할 수 있어요.
   </p>
+
+  <div class="callout callout-tip">
+    <span class="callout-icon">💡</span>
+    <div>
+      <strong>왜 Git 커밋을 하나요?</strong><br>
+      Git 커밋은 작업의 세이브 포인트입니다.
+      어떤 파일을 언제, 왜 바꿨는지 기록하고, 필요하면 예전 상태로 돌아갈 수 있게 해줍니다.
+      GitHub에 push하면 내 컴퓨터 밖에도 백업이 생겨서 다른 PC에서도 이어서 작업할 수 있어요.
+    </div>
+  </div>
 
   <div class="step-list">
 
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h4>GitHub 저장은 나중에 해도 됩니다</h4>
+        <h4>GitHub에 빈 저장소 만들기</h4>
         <p>
-          <code>/save</code>는 GitHub 저장소와 연결된 폴더에서 쓰면 편리한 저장 커맨드입니다.
-          하지만 ZIP으로 받은 폴더에서는 GitHub 연결이 아직 없을 수 있어요.
+          GitHub에서 새 저장소를 만드세요.
+          저장소 이름은 <code>first-vibe-coding</code>처럼 짧고 알아보기 쉽게 정합니다.
+        </p>
+
+        <ol>
+          <li>GitHub 오른쪽 위 <strong>+</strong> 버튼을 누르세요</li>
+          <li><strong>New repository</strong>를 선택하세요</li>
+          <li><strong>Repository name</strong>에 <code>first-vibe-coding</code>을 입력하세요</li>
+          <li><strong>Add a README file</strong>은 체크하지 마세요</li>
+          <li><strong>Create repository</strong>를 누르세요</li>
+        </ol>
+
+        <div class="callout callout-warn">
+          <span class="callout-icon">⚠️</span>
+          <div>
+            README를 체크하면 처음 push할 때 충돌이 날 수 있습니다.
+            빈 저장소로 만든 뒤 현재 워크스페이스를 올리는 편이 가장 쉽습니다.
+          </div>
+        </div>
+
+        <label class="step-complete" data-step-id="ch3-s10">
+          <input type="checkbox"> first-vibe-coding 저장소를 만들었어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>워크스페이스와 GitHub 저장소 연결</h4>
+        <p>
+          새 저장소 화면에 보이는 주소를 복사하세요.
+          보통 아래처럼 생겼습니다.
+        </p>
+
+        <pre><code>https://github.com/내아이디/first-vibe-coding.git</code></pre>
+
+        <p>Claude Code 입력창에 아래처럼 요청하세요. 주소 부분은 본인 주소로 바꾸면 됩니다.</p>
+
+        <pre><code>이 워크스페이스를 내 GitHub 저장소에 연결해줘.
+
+저장소 주소:
+https://github.com/내아이디/first-vibe-coding.git
+
+해야 할 일:
+- git init이 안 되어 있으면 실행
+- 기본 브랜치는 main으로 설정
+- remote origin을 위 저장소 주소로 연결
+- 아직 커밋하지 말고 연결 상태만 확인</code></pre>
+
+        <label class="step-complete" data-step-id="ch3-s12">
+          <input type="checkbox"> 워크스페이스를 GitHub 저장소에 연결했어요
+        </label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>/save로 첫 커밋과 push</h4>
+        <p>이제 Claude Code 입력창에 아래를 입력하세요.</p>
+
+        <pre><code>/save 첫 워크스페이스 설정 저장</code></pre>
+
+        <p>
+          Claude가 변경된 파일을 확인하고, 보안 문제가 없는지 본 뒤,
+          커밋 메시지를 확인하고 GitHub에 올려줍니다.
         </p>
 
         <div class="callout callout-tip">
           <span class="callout-icon">💡</span>
           <div>
-            처음에는 ZIP으로 쉽게 시작하고, 작업물을 GitHub에 올리고 싶어질 때 저장소 연결을 배우면 됩니다.
-            오늘은 워크스페이스 폴더 안에 파일이 잘 만들어지는 것에 집중하세요.
+            이후 Ch4와 Ch5에서 파일을 만들거나 수정한 뒤에도 <code>/save</code>를 다시 입력하면
+            새 작업 내용을 같은 저장소에 계속 저장할 수 있습니다.
           </div>
         </div>
 
-        <label class="step-complete" data-step-id="ch3-s10">
-          <input type="checkbox"> ZIP 폴더 저장과 GitHub 저장의 차이를 알겠어요
+        <label class="step-complete" data-step-id="ch3-s13">
+          <input type="checkbox"> /save로 첫 커밋과 push를 해봤어요
         </label>
       </div>
     </div>
