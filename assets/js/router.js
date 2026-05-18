@@ -11,7 +11,7 @@ const ROUTES = {
   'ch4'   : 'chapters/ch4-project.html',
 };
 
-let currentChapter = '';
+let currentChapter = null;
 
 /* 해시에서 챕터 추출: #/ch1 → 'ch1' */
 function getChapter() {
