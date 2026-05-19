@@ -201,17 +201,55 @@
         <p>
           설치가 필요한 경우
           <a href="https://www.anaconda.com/download" target="_blank" rel="noopener">anaconda.com/download</a>에 접속해서
-          Windows용 설치 파일을 다운로드하세요.
+          가입 화면이 나오면 아래쪽의 <strong>Skip Registration</strong>을 눌러 다운로드 선택 화면으로 이동하세요.
+          다운로드 선택 화면에서는 <strong>Anaconda Distribution</strong>의
+          <strong>Windows 64-Bit Graphical Installer</strong>를 선택하면 됩니다.
         </p>
+
+        <div class="callout callout-tip">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>회원가입하지 않아도 됩니다.</strong>
+            가입 화면에서는 <strong>Skip Registration</strong>을 누르고, 다음 화면에서 Miniconda가 아니라
+            <strong>Anaconda Distribution</strong>을 선택하세요.
+          </div>
+        </div>
 
         <div class="callout callout-warn">
           <span class="callout-icon">⚠️</span>
           <div>
-            <strong>"Register Anaconda3 as my default Python"</strong> 옵션은 체크 상태로 두세요.
+            <strong>설치 옵션 화면에서 아래 두 항목을 체크하세요.</strong>
+            <code>Add Anaconda3 to my PATH environment variable</code>과
+            <code>Register Anaconda3 as my default Python</code>을 체크하면
+            VSCode와 PowerShell에서 Python을 바로 찾기 쉬워집니다.
           </div>
         </div>
 
-        <div class="screenshot-placeholder">📸 화면 예시: 필요한 경우 Anaconda 설치 화면</div>
+        <div class="screenshot-placeholder">📸 화면 예시: Anaconda Distribution의 Windows 64-Bit Graphical Installer 선택 화면</div>
+
+        <ol>
+          <li>설치 프로그램을 실행하고 첫 화면에서 <strong>Next</strong>를 누르세요.</li>
+          <li>라이선스 화면에서 <strong>I Agree</strong>를 누르세요.</li>
+          <li>설치 유형은 <strong>Just Me</strong>를 선택하고 <strong>Next</strong>를 누르세요.</li>
+          <li>설치 위치는 기본값 그대로 두고 <strong>Next</strong>를 누르세요.</li>
+          <li>고급 옵션에서 <strong>Add Anaconda3 to my PATH</strong>와 <strong>Register Anaconda3 as my default Python</strong>을 체크하고 <strong>Install</strong>을 누르세요.</li>
+          <li>설치가 끝나면 <strong>Finish</strong>를 누르세요.</li>
+        </ol>
+
+        <div class="screenshot-placeholder">📸 화면 예시: Anaconda 설치 1-2단계 병합 화면</div>
+        <div class="screenshot-placeholder">📸 화면 예시: Anaconda 설치 3-4단계 병합 화면</div>
+        <div class="screenshot-placeholder">📸 화면 예시: Anaconda 설치 5-6단계 병합 화면</div>
+
+        <div class="hint-box">
+          <button class="hint-toggle">
+            💡 사진만 보고 따라 하기 어렵다면
+            <span class="toggle-arrow">▼</span>
+          </button>
+          <div class="hint-content">
+            <p>설치 화면의 순서가 헷갈리면 아래 영상을 참고하세요.</p>
+            <p><a href="https://youtu.be/dhlyYaeOCJo?si=Y4cyTafv2GtfB5MN" target="_blank" rel="noopener">Anaconda 설치 참고 영상 보기</a></p>
+          </div>
+        </div>
 
         <label class="step-complete" data-step-id="ch1-s5">
           <input type="checkbox"> Anaconda 설치가 필요 없거나, 설치를 완료했어요
