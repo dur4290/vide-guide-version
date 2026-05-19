@@ -12,7 +12,7 @@ const ROUTES = {
   'ch5'   : 'chapters/ch5-project.html',
 };
 
-const CONTENT_VERSION = '20260519-02';
+const CONTENT_VERSION = '20260519-04';
 
 let currentChapter = null;
 
