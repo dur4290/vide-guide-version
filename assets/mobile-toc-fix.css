@@ -1,8 +1,11 @@
 /* Mobile-only: hide the top chapter/table-of-contents panel.
    Desktop layout is intentionally untouched. */
 @media (max-width: 768px) {
-  #root .fixed.top-\[70px\].left-0.right-0,
-  #root .sticky.top-\[70px\] {
+  #root > div > div:nth-of-type(2) {
     display: none !important;
+  }
+
+  body {
+    padding-bottom: 88px;
   }
 }
