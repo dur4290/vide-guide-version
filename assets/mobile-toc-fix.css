@@ -1,0 +1,42 @@
+/* Mobile-only fix for the chapter/table-of-contents panel.
+   Desktop layout is intentionally untouched. */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 96px;
+  }
+
+  #root .fixed.top-\[70px\].left-0.right-0,
+  #root .sticky.top-\[70px\] {
+    top: auto !important;
+    bottom: 12px !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: 76px !important;
+    min-height: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    z-index: 45 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18) !important;
+  }
+
+  #root .fixed.top-\[70px\].left-0.right-0 > *,
+  #root .sticky.top-\[70px\] > * {
+    max-height: 76px !important;
+    min-height: 0 !important;
+  }
+
+  #root .fixed.top-\[70px\].left-0.right-0 button,
+  #root .fixed.top-\[70px\].left-0.right-0 a,
+  #root .sticky.top-\[70px\] button,
+  #root .sticky.top-\[70px\] a {
+    min-width: 68px;
+    max-height: 60px !important;
+    writing-mode: horizontal-tb !important;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+}
